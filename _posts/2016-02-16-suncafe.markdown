@@ -1,13 +1,17 @@
 ---
 layout:     post
-title:      "「实验设计」类似外卖系统设计 Suncafe"
-subtitle:    "Lindz"
-date:        2016-2-16 12:00:00
-author:      "Lindz"
-header-img:     "img/post-bg-alitrip.jpg"
+title:      "「知乎」为什么阿里系软件体验都不好？"
+subtitle:   "或许这就是所谓的企业 DNA "
+date:       2014-10-1 12:00:00
+author:     "Hux"
+header-img: "img/post-bg-alibaba.jpg"
 tags:
-	- Java
+    - 知乎
+    - 阿里巴巴
+    - 交互设计
 ---
+
+> 这篇文章转载自[我在知乎上的回答](http://www.zhihu.com/question/25657351/answer/31278511)
 
 ## 外卖系统设计 Suncafe  
 一开始老师叫我们写一个基于JAVA跟咖啡有关的系统，我便想起我们食堂内的咖啡厅，夏天到来时许多同学都会选择到咖啡厅喝喝咖啡，要是能够开发一个类似外卖的系统，同学在宿舍想喝咖啡的就能够派上用场了。基于这个想法，我花了差不多一周的时间进行实现并参加班级答辩。  
