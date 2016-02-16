@@ -1,13 +1,12 @@
 ---
-layout:post
-title:"「实验设计」类似外卖系统设计 Suncafe"
-subtitle: "Lindz"
-date:       2016-2-16
-author:     "Lindz"
-header-img: "img/post-bg-alitrip.jpg"
+layout:     post
+title:      "「实验设计」类似外卖系统设计 Suncafe"
+subtitle:    "Lindz"
+date:        2016-2-16
+author:      "Lindz"
+header-img:     "img/post-bg-alitrip.jpg"
 tags:
 	- Java
-
 ---
 
 ## 外卖系统设计 Suncafe  
