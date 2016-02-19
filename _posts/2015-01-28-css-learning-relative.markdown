@@ -8,10 +8,6 @@ tags:
     - CSS
 ---
 
-<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
-<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
 # CSS学习笔记之relative  
   
 ## relative与absolute：  
