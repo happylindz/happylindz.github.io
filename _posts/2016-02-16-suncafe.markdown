@@ -1,9 +1,8 @@
 ---
 layout:     post
-title:      "「知乎」为什么阿里系软件体验都不好？"
-subtitle:   "或许这就是所谓的企业 DNA "
-date:       2014-10-1 12:00:00
-author:     "Hux"
+title:      "「外卖系统设计」Suncafe"
+date:       2016-02-16 12:00:00
+author:     "Lindz"
 header-img: "img/post-bg-2015.jpg"
 tags:
     - Java
