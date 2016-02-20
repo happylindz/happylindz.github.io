@@ -58,6 +58,7 @@ layout: default
 
                 <!-- Short About -->
                 <section class="visible-md visible-lg">
+
                     <hr><h5><a href="{{/about/ | prepend: site.baseurl }}">ABOUT ME</a></h5>
                     <div class="short-about">
                         {% if site.sidebar-avatar %}
@@ -66,8 +67,8 @@ layout: default
                         {% if site.sidebar-about-description %}
                             <p>{{site.sidebar-about-description}}</p>
                         {% endif %}
+
                         <ul class="list-inline">
-                            {% if site.zhihu_username %}
                             <li>
                                 <a target="_blank" href="http://www.zhihu.com/people/lin-dong-zhou-65">
                                     <span class="fa-stack fa-lg">
@@ -76,9 +77,7 @@ layout: default
                                     </span>
                                 </a>
                             </li>
-                            {% endif %}
 
-                            {% if site.weibo_username %}
                             <li>
                                 <a target="_blank" href="http://weibo.com/u/1872823177?is_all=1">
                                     <span class="fa-stack fa-lg">
@@ -87,9 +86,7 @@ layout: default
                                     </span>
                                 </a>
                             </li>
-                            {% endif %}
 
-                            {% if site.github_username %}
                             <li>
                                 <a target="_blank" href="https://github.com/happylindz">
                                     <span class="fa-stack fa-lg">
@@ -98,7 +95,6 @@ layout: default
                                     </span>
                                 </a>
                             </li>
-                            {% endif %}
                         </ul>
 
                     </div>
