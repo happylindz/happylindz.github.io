@@ -3,19 +3,10 @@ title: Lindz Blog
 SEOTitle: 林东洲的博客 | Lindz Blog
 header-img: img/home-bg.jpg
 email: lindongzhou95@gmail.com
-description: ""
-keyword: ""
+description: "记录生活、技术"
+keyword: "前端开发,移动互联网"
 url: "http://isgenius.me"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
-
-
-
-# SNS settings
-RSS: false
-weibo_username:     happylindz
-zhihu_username:     viho
-github_username:    happylindz
-
 
 
 # Build settings
@@ -55,7 +46,7 @@ duoshuo_share: false                     # set to false if you want to use Comme
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description:        "纸上得来总觉浅,绝知此事要躬行."
+sidebar-about-description:        "Study Software Engineering in NEU, Crazy at Web-Develop."
 sidebar-avatar: /img/avatar-lindz.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
