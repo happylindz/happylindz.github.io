@@ -64,64 +64,55 @@ header-img: "img/about-bg.jpg"
 
 
 
-{% if site.duoshuo_username %}
+<!--{% if site.duoshuo_username %}-->
 <!-- 多说评论框 start -->
-<div class="comment">
-    <div class="ds-thread"
-    {% if site.duoshuo_username == "huxblog" %}
-        data-thread-id="1187623191091085319"
-    {% else %}
-        data-thread-key="{{site.duoshuo_username}}/about"
-    {% endif %}
+<!--<div class="comment">-->
+    <!--<div class="ds-thread"-->
+    <!--{% if site.duoshuo_username == "happylindz" %}-->
+        <!--data-thread-id="1187623191091085319"-->
+    <!--{% else %}-->
+        <!--data-thread-key="{{site.duoshuo_username}}/about"-->
+    <!--{% endif %}-->
 
-    data-title="{{page.title}}"
-    data-url="{{site.url}}/about/"></div>
-</div>
+    <!--data-title="{{page.title}}"-->
+    <!--data-url="{{site.url}}/about/"></div>-->
+<!--</div>-->
+<!--&lt;!&ndash; 多说评论框 end &ndash;&gt;-->
+
+<!--&lt;!&ndash; Duoshuo hacking &ndash;&gt;-->
+<!--<input id="dsUser" type="hidden" value="{{site.duoshuo_username}}"  />-->
+
+<!--&lt;!&ndash; 多说公共JS代码 start (一个网页只需插入一次) &ndash;&gt;-->
+<!--<script type="text/javascript">-->
+    <!--// dynamic User hacking by Hux-->
+    <!--var _user = document.getElementById('dsUser').value;-->
+    <!--// duoshuo comment query.-->
+    <!--var duoshuoQuery = {short_name: _user };-->
+    <!--(function() {-->
+        <!--var ds = document.createElement('script');-->
+        <!--ds.type = 'text/javascript';ds.async = true;-->
+        <!--ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';-->
+        <!--ds.charset = 'UTF-8';-->
+        <!--(document.getElementsByTagName('head')[0]-->
+         <!--|| document.getElementsByTagName('body')[0]).appendChild(ds);-->
+    <!--})();-->
+<!--</script>-->
+<!--&lt;!&ndash; 多说公共JS代码 end &ndash;&gt;-->
+<!--{% endif %}-->
+
+<!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
 <!-- 多说评论框 end -->
-
-<!-- Duoshuo hacking -->
-<input id="dsUser" type="hidden" value="{{site.duoshuo_username}}"  />
-
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
-    // dynamic User hacking by Hux
-    var _user = document.getElementById('dsUser').value;
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
+    var duoshuoQuery = {short_name:"lindz"};
     (function() {
         var ds = document.createElement('script');
         ds.type = 'text/javascript';ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-{% endif %}
-
-
-{% if site.disqus_username %}
-<!-- disqus 评论框 start -->
-<div class="comment">
-    <div id="disqus_thread" class="disqus-thread">
-
-    </div>
-</div>
-<!-- disqus 评论框 end -->
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "{{site.disqus_username}}";
-    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
-{% endif %}

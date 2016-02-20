@@ -8,14 +8,12 @@ tags:
     - CSS
 ---
 
-# CSS学习笔记之relative  
-  
 ## relative与absolute：  
-* **限制left/top/right/bottom定位:**
+* 限制left/top/right/bottom定位:
   
 > absolute绝对定位是相对于非static值的父元素
 
-* **限制z-index层级:**    
+* 限制z-index层级:
 
 code：  
 
@@ -56,7 +54,7 @@ code：
 ```
 此时尽管child1的z-index比child2小，但是child1依然在child2上面.
 
-* **限制在overflow下:**  
+* 限制在overflow下:
 
 code:  
 
