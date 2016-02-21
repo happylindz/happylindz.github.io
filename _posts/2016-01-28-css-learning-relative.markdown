@@ -8,7 +8,8 @@ tags:
     - CSS
 ---
 
-## relative与absolute：  
+## relative与absolute：
+  
 * 限制left/top/right/bottom定位:
   
 > absolute绝对定位是相对于非static值的父元素
