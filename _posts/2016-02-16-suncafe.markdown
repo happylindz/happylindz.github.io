@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "「实验设计」类似外卖系统设计 Suncafe"
-date:       2016-2-16 12:00:00
+title:      "「实验设计」外卖系统设计 Suncafe"
+date:       2015-10-16 12:00:00
 author:     "Lindz"
 header-img: "img/post-bg-2015.jpg"
 tags:
