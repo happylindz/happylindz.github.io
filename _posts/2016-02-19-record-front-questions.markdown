@@ -16,7 +16,9 @@ tags:
 这题乍一看意识到使用闭包，但是难点还要每隔1秒弹出一次。
 常规方法：设置闭包并且设置时间每次增长一秒。
 
+	
  ```javascript
+ 
  	var arr = ['a','b','c','d','e'];
  	for(var i = 0,len = arr.length;i < len; i++){
 		(function (j) {
@@ -28,7 +30,9 @@ tags:
  ```
  ES6方法：利用ES6中let块级作用域的特性。
  
+ 
  ```javascript
+ 
  	var arr = ['a','b','c','d','e'];
  	for(let i = 0,len = arr.length;i < len; i++){
  		setTimeout(function () {
