@@ -1,9 +1,9 @@
 ---
 layout:     post
 title:      "「前端 · 面试」记录一些有意思的题目(一)"
-date:       2016-02-21 12:00:00
+date:       2016-02-20 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-os-metro.jpg"
+header-img: "img/home-bg-geek.jpg"
 tags:
     - 面试
     - 前端开发
