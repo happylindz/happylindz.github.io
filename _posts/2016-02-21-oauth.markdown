@@ -1,0 +1,54 @@
+---
+layout:     post
+title:      "第三方登录 - OAuth2.0协议"
+date:       2016-02-21 12:00:00
+author:     "Lindz"
+header-img: "img/post-bg-os-metro.jpg"
+tags:
+    - PHP
+    - 后台开发
+---
+
+> 欢迎转载，转载请注明出处：[www.happylindz.com](http://www.happylindz.com)。
+
+## OAuth协议简介：
+
+OAuth协议：即为Open Authorization，我们经常在一些网站提供一些例如QQ，微博等应用的登录方式。  
+例如：
+
+![img](/img/assets/2016-02-21-oauth/1.png)
+
+简单说来，OAuth协议就是大公司如腾讯，阿里巴巴开放一些接口权限，可以让用户在第三方应用不知道密码的情况完成登录操作，并提供给第三方应用一些基本的信息。  
+流程图：  
+
+![img](/img/assets/2016-02-21-oauth/2.png)
+
+## OAuth应用场景：
+
+* QQ用户授权第三方应用如(知乎，豆瓣)使用其QQ账号相关信息。
+* 获得授权后，在符合权限规则的情况下访问各种API。(如一键分享到QQ空间)
+* 同一家公司的不同系统共享账号信息，比如阿里巴巴旗下的淘宝，支付宝，阿里云都可以使用淘宝账号进行登录。
+
+## 重要步骤解析：
+
+一、请求OAuth登录页:第三方应用请求QQ登录页面时使用的带有特定参数的URL。   
+ 
+例如极客学院上的请求登录页地址为：https://graph.qq.com/oauth/show?..&client_id=101119675&redirect_uri=http://passport.jikexueyuan.com/connect/success&...
+
+这个URL称之为：Request Token URL - 未授权的令牌请求服务地址
+  
+>client_id为QQ对该站点的唯一标识  
+>redirect_uri为用户登录成功后的回调地址  
+
+二、用户使用QQ号登录并授权。
+
+在用户登陆成功后，QQ在回调地址中加入了一个code参数给第三方应用。  
+比如：https://passport.jikexueyuan.com/connect/success/qqcallback?code=xxxxxx
+
+三、返回登录结果。
+
+处于安全性的考虑，需要第三方应用向令牌服务地址再次发起请求。  
+该地址称为：User Authorization URL - 用户授权的令牌请求服务地址  
+例如：https://xxx.qq.com/oauth/...?...&client_id=xxx&&...&client_secret=xxxxxxx&....&code=xxxxxx...
+
+最终成功后第三方应用获取的一个OAuth接口的令牌(AcessToken),以后第三方应用在请求QQ提供信息时就以这个令牌作为标识。

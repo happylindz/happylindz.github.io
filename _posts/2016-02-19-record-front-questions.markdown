@@ -18,7 +18,6 @@ tags:
 
 	
  ```javascript
- 
  	var arr = ['a','b','c','d','e'];
  	for(var i = 0,len = arr.length;i < len; i++){
 		(function (j) {
@@ -32,7 +31,6 @@ tags:
  
  
  ```javascript
- 
  	var arr = ['a','b','c','d','e'];
  	for(let i = 0,len = arr.length;i < len; i++){
  		setTimeout(function () {
@@ -71,7 +69,7 @@ tags:
 
 ## 三、用CSS实现下面图片：
 
-![img](/Users/Mac/Desktop/Screen Shot 2016-02-21 at 12.31.29 PM.png)
+![img](/assets/2016-01-20-javascript-execution-context/1.png)
 
 实现难点在于上述的三角形，可以使用css中的border来实现：  
 **细节：首先div盒子宽高要设置为0；  
