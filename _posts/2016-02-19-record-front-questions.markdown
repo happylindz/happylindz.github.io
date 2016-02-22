@@ -69,7 +69,7 @@ tags:
 
 ## 三、用CSS实现下面图片：
 
-![img](/assets/2016-01-20-javascript-execution-context/1.png)
+![img](/assets/2016-01-21-record-front-questions/1.png)
 
 实现难点在于上述的三角形，可以使用css中的border来实现：  
 **细节：首先div盒子宽高要设置为0；  
