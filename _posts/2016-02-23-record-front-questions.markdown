@@ -108,7 +108,7 @@ Foo().getName();     //TypeError: Foo().getName is not a function.
 #### 第五问 new Foo.getName(); ,此处考察的是js的运算符优先级问题。
 
 根据图中优先级的描述：  
-![优先级](/img/2016-02-23-record-front-questions/1.png)  
+![优先级](/assets/2016-02-23-record-front-questions/1.png)  
 可以得知：可以得知点（.）的优先级高于new操作，所以原式相当于是：
 
 ```javascript

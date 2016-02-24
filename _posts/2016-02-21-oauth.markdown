@@ -16,12 +16,12 @@ tags:
 OAuth协议：即为Open Authorization，我们经常在一些网站提供一些例如QQ，微博等应用的登录方式。  
 例如：
 
-![img](/img/assets/2016-02-21-oauth/1.png)
+![img](/assets/2016-02-21-oauth/1.png)
 
 简单说来，OAuth协议就是大公司如腾讯，阿里巴巴开放一些接口权限，可以让用户在第三方应用不知道密码的情况完成登录操作，并提供给第三方应用一些基本的信息。  
 流程图：  
 
-![img](/img/assets/2016-02-21-oauth/2.png)
+![img](/assets/2016-02-21-oauth/2.png)
 
 ## OAuth应用场景：
 
