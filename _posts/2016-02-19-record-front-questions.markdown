@@ -16,60 +16,59 @@ tags:
 这题乍一看意识到使用闭包，但是难点还要每隔1秒弹出一次。
 常规方法：设置闭包并且设置时间每次增长一秒。
 
-	
- ```javascript
- 	var arr = ['a','b','c','d','e'];
- 	for(var i = 0,len = arr.length;i < len; i++){
-		(function (j) {
-			setTimeout(function () {
-				alert(arr[j]);
-			},1000 * (i+1))
-		})(i);
-	}
- ```
- ES6方法：利用ES6中let块级作用域的特性。
+
+```javascript
+var arr = ['a','b','c','d','e'];
+for(var i = 0,len = arr.length;i < len; i++){
+	(function (j) {
+		setTimeout(function () {
+			alert(arr[j]);
+		},1000 * (i+1))
+	})(i);
+}
+```
+ES6方法：利用ES6中let块级作用域的特性。
  
- 
- ```javascript
- 	var arr = ['a','b','c','d','e'];
- 	for(let i = 0,len = arr.length;i < len; i++){
- 		setTimeout(function () {
- 			alert(arr[i]);
- 		},1000 * (i+1))
- 	}
- ```
+```javascript
+var arr = ['a','b','c','d','e'];
+for(let i = 0,len = arr.length;i < len; i++){
+	setTimeout(function () {
+ 		alert(arr[i]);
+ 	},1000 * (i+1))
+}
+```
 ## 二、下面程序的执行结果是：
 
 ```javascript
-    var name = 'World!';
-    (function () {
-        if (typeof name === 'undefined') {
-            var name = 'Jack';
-            console.log('Goodbye ' + name);
-        } else {
-            console.log('Hello ' + name);
-        }
-    })();
+var name = 'World!';
+(function () {
+	if (typeof name === 'undefined') {
+		var name = 'Jack';
+		console.log('Goodbye ' + name);
+	} else {
+		console.log('Hello ' + name);
+	}
+})();
 ```
 这题乍一看容易认为输出"Hello World!"，其实不然，因为var name = 'Jack',存在变量提升，故这段代码在执行的时候会被解析成：
 
 ```javascript
-    var name = 'World!';
-    (function () {
-    	var name;
-        if (typeof name === 'undefined') {
-            name = 'Jack';
-            console.log('Goodbye ' + name);
-        } else {
-            console.log('Hello ' + name);
-        }
-    })();
+var name = 'World!';
+(function () {
+	var name;
+	if (typeof name === 'undefined') {
+		name = 'Jack';
+      	console.log('Goodbye ' + name);
+	} else {
+      	console.log('Hello ' + name);
+	}
+})();
 ```
 故执行结果为："Goodbye Jack";若将var name = 'Jack' 的var去掉，则执行结果为Hello World!。
 
 ## 三、用CSS实现下面图片：
 
-![img](/assets/2016-01-21-record-front-questions/1.png)
+![triangle](/assets/2016-01-21-record-front-questions/1.png)
 
 实现难点在于上述的三角形，可以使用css中的border来实现：  
 **细节：首先div盒子宽高要设置为0；  
@@ -124,79 +123,80 @@ tags:
 ## 四、实现下述题目的要求：
 
 ```javascript	
-    var Obj = function(msg){
-        this.msg = msg;
-        this.shout = function(){
-            alert(this.msg);
-        }
-        this.waitAndShout = function(){
-            //隔五秒钟后执行上面的shout方法
+var Obj = function(msg){
+	this.msg = msg;
+	this.shout = function(){
+		alert(this.msg);
+	}
+	this.waitAndShout = function(){
+		//隔五秒钟后执行上面的shout方法
 
-        }
-    }
+	}
+}
 ```
 看到此题容易以为考察setTimeout的用法，答案就写成：
 
 ```javascript
-    var Obj = function(msg){
-        this.msg = msg;
-        this.shout = function(){
-            alert(this.msg);
-        }
-        this.waitAndShout = function(){
-            //隔五秒钟后执行上面的shout方法
-            setTimeout(function () {
-                this.shout();
-            },5000);
-        }
-    }
+var Obj = function(msg){
+	this.msg = msg;
+   	this.shout = function(){
+   		alert(this.msg);
+	}
+   	this.waitAndShout = function(){
+   		//隔五秒钟后执行上面的shout方法
+   			setTimeout(function () {
+   				this.shout();
+   			},5000);
+   	}
+}
 
-    var obj = new Obj('Jack');
-    obj.waitAndShout();
+var obj = new Obj('Jack');
+obj.waitAndShout();
 ```
 这样写是错误的，控制台会报错：**Uncaught TypeError: this.shout is not a function(anonymous function) @ test.html:17**  
 事实上setTimeout里面的函数是个匿名函数，此时this指向window，故正确的答案:  
 
 ```javascript
-    var Obj = function(msg){
-        this.msg = msg;
-        this.shout = function(){
-            alert(this.msg);
-        }
-        this.waitAndShout = function(){
-            //隔五秒钟后执行上面的shout方法
-            var self = this;
-            setTimeout(function () {
-                self.shout();
-            },5000);
-        }
+var Obj = function(msg){
+    this.msg = msg;
+    this.shout = function(){
+        alert(this.msg);
     }
+    this.waitAndShout = function(){
+        //隔五秒钟后执行上面的shout方法
+        var self = this;
+        setTimeout(function () {
+            self.shout();
+        },5000);
+    }
+}
 
-    var obj = new Obj('Jack');
-    obj.waitAndShout();
+var obj = new Obj('Jack');
+obj.waitAndShout();
 ```
+
 使用一个self变量来存放this，这样匿名函数就可以用self来访问Obj这个对象了，实现细节不在赘述。  
 **有兴趣的同学可以看:** [JavaScript中的this陷阱的最全收集--没有之一](https://segmentfault.com/a/1190000002640298)
 
 ## 五、输出下述代码的执行结果：
 
 ```javascript
-    var start = new Date;
-    setTimeout(function(){
-        console.log('fn1');
-    }, 20);
-    setTimeout(function(){
-        console.log('fn2');
-    }, 30);
-    setTimeout(function(){
-        console.log('another fn2');
-    }, 30);
-    setTimeout(function(){
-        console.log('fn3');
-    }, 10);
-    console.log('start while');
-    while (new Date - start < 1000) {};
-    console.log('end while');
+var start = new Date;
+setTimeout(function(){
+    console.log('fn1');
+}, 20);
+setTimeout(function(){
+    console.log('fn2');
+}, 30);
+setTimeout(function(){
+    console.log('another fn2');
+}, 30);
+setTimeout(function(){
+    console.log('fn3');
+}, 10);
+console.log('start while');
+while (new Date - start < 1000) {};
+console.log('end while');
 ```
 要做此题必须理解setTimeout是如何运行的, 简单来说，Javascript执行引擎运行时产生堆(Heap)和栈(Stack)。程序的代码一次进入栈中等待执行，在遇到WebAPIs中规定的事件如(DOM操作，ajax请求，还有setTimeout事件)时，会将这些事件添加到一个任务队列当中，因为Javascript是单线程执行，所以当事件时间到了之后，它先看看主线程中代码是否执行完，若代码还在执行，则阻塞该事件。  
 
@@ -218,31 +218,21 @@ another fn2
 ### 对于下列程序运行结果，符合预期的是(单选)：
 
 ```javascript
+function f1() {
+    console.time('time span');
+}
+function f2() {
+    console.timeEnd('time span');
+}
+setTimeout(f1, 100);
+setTimeout(f2, 200);
 
-    function f1() {
+function waitForMs(n) {
+    var now = Date.now();
+    while (Date.now() - now < n) {}
+}
 
-        console.time('time span');
-
-    }
-    function f2() {
-
-        console.timeEnd('time span');
-
-    }
-
-    setTimeout(f1, 100);
-
-    setTimeout(f2, 200);
-
-    function waitForMs(n) {
-
-        var now = Date.now();
-
-        while (Date.now() - now < n) {}
-
-    }
-
-    waitForMs(500);
+waitForMs(500);
 ```
 
 > * A、time span:700.077ms

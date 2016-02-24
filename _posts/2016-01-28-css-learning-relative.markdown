@@ -11,8 +11,7 @@ tags:
 ## relative与absolute：
   
 * 限制left/top/right/bottom定位:
-  
-> absolute绝对定位是相对于非static值的父元素
+> absolute绝对定位是相对于非static值的父元素  
 
 * 限制z-index层级:
 
@@ -29,7 +28,6 @@ code：
 	z-index:2;
 }
 ```   
-
 此时div2层级比div1高，优先显示.  
 然而:  
 
@@ -55,7 +53,7 @@ code：
 ```
 此时尽管child1的z-index比child2小，但是child1依然在child2上面.
 
-* 限制在overflow下:
+* 限制在overflow下:  
 
 code:  
 
@@ -87,13 +85,11 @@ code:
 ## relative与定位:  
 ### 特性：
 * 相对自身： 
-
 > 与absolute(相对于非static值的父元素定位)不同，relative相对于其原本位置进行定位。   
 
-* 无侵入: 	
+* 无侵入: 	 
 
-> margin-top与top进行对比  
-
+margin-top与top进行对比   
 code：	
 
 ```css
