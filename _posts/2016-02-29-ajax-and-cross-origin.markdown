@@ -1,15 +1,16 @@
 ---
-layout: 	post
-title:   "「学习 · 笔记」Ajax及跨域请求"
-date:       2016-02-29
+layout:     post
+title:      "「学习 · 笔记」Ajax 及跨域请求"
+date:       2016-02-29 12:00:00
 author:     "Lindz"
 header-img: "img/home-bg.jpg"
 tags:
 	- Ajax
 	- Javascript
+	- PHP
 	- 学习笔记
-	
 ---
+
 
 ## Ajax概念
 

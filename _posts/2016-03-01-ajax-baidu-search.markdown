@@ -1,18 +1,17 @@
 ---
-layout: 	post
-title:   "「学习 · 笔记」AJax 模拟百度搜索"
-date:       2016-03-01
+layout:     post
+title:      "「学习 · 笔记」AJax 模拟百度搜索"
+date:       2016-03-01 12:00:00
 author:     "Lindz"
 header-img: "img/post-bg-js-module.jpg"
 tags:
-	- Ajax
+    - Ajax
 	- Javascript
 	- 学习笔记
-	
 ---
 
  
-**在阅读此文前，建议先阅读 ![「学习 · 笔记」Ajax及跨域请求]()熟悉一下 AJax 请求，本文会跳过一些细节代码的实现说明。**
+在阅读此文前，建议先阅读  [「学习 · 笔记」Ajax及跨域请求](http://www.happylindz.com/2016/03/01/2016-02-29-ajax-and-cross-origin/) 熟悉一下 AJax 请求，本文会跳过一些细节代码的实现说明。
 
 
 实现效果：
