@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      "Ajax - 跨域请求"
+title:      "Aax - 跨域请求"
 date:       2016-02-29 12:00:00
 author:     "Lindz"
 header-img: "img/home-bg.jpg"
 tags:
-    - Ajax
-    - Javascript
-    - PHP
+	- Ajax
+	- Javascript
+	- PHP
 ---
 
 > 欢迎转载，转载请注明出处：[www.happylindz.com](http://www.happylindz.com)。
@@ -23,7 +23,7 @@ Ajax全称为：'Asynchronous Javascript And XML'，即异步 Javascript 和 XML
 而通过 Ajax 在后台与服务器进行少量的数据交换，可以使网页实现异步更新。这就意味着可以在不重新加载整个网页的情况下，**对网页的某部分进行更新**。
 
 例：
-![](/assets/2016-02-29-ajax-and-cross-origin/1.png)
+![](/assets/2016-02-29-ajax-cross-origin/1.png)
 
 比如我在百度上搜索 ajax，其实我并没有点击‘百度一下‘按钮进行提交表单，但是页面已经向后台发起 Ajax 请求获取数据，并将获取到的数据在页面上进行局部更新。
 
@@ -42,7 +42,7 @@ Ajax全称为：'Asynchronous Javascript And XML'，即异步 Javascript 和 XML
 ```
 表单中有个输入框和提交按钮，还有一个用来存储结果的 div。  
 效果：  
-![](/assets/2016-02-29-ajax-and-cross-origin/1.png)
+![](/assets/2016-02-29-ajax-cross-origin/2.png)
 
 ### Ajax对象创建
 
@@ -184,9 +184,9 @@ echo $result;
 
 ### 测试
 
-![](/assets/2016-02-29-ajax-and-cross-origin/2.png)
+![](/assets/2016-02-29-ajax-cross-origin/3.png)
 
-![](/assets/2016-02-29-ajax-and-cross-origin/3.png)
+![](/assets/2016-02-29-ajax-cross-origin/4.png)
 
 ## 安全限制
 
@@ -237,7 +237,7 @@ document.getElementsByTagName('head')[0].appendChild(jsonp);
 #### 在了解CORS前，先来搞清楚概念：  
 Origin 表示本域，也就是浏览器当前页面的域。当 JavaScript 向外域（如sina.com）发起请求后，浏览器收到响应后，首先检查 Access-Control-Allow-Origin 是否包含本域，如果是，则此次跨域请求成功，如果不是，则请求失败，JavaScript 将无法获取到响应的任何数据。
 
-![](/assets/2016-02-29-ajax-and-cross-origin/4.png)
+![](/assets/2016-02-29-ajax-cross-origin/5.png)
 
 假设本域是 my.com，外域是 sina.com，只要响应头 Access-Control-Allow-Origin为 http://my.com，或者是*，本次请求就可以成功。
 
