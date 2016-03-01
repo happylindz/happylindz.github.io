@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af4ec196-dd4b-4337-8879-ff44becb7480" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2016-02-29-ajax-and-cross-origin.markdown" afterPath="$PROJECT_DIR$/_posts/2016-02-29-ajax-and-cross-origin.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2016-03-01-ajax-baidu-search.markdown" afterPath="$PROJECT_DIR$/_posts/2016-03-01-ajax-baidu-search.markdown" />
-    </list>
+    <list default="true" id="af4ec196-dd4b-4337-8879-ff44becb7480" name="Default" comment="" />
     <ignored path="happylindz.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,8 +84,8 @@
       <file leaf-file-name="2016-02-29-ajax-and-cross-origin.markdown" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2016-02-29-ajax-and-cross-origin.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5022831">
-              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.3652968">
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -757,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2016-02-29-ajax-and-cross-origin.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5022831">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.3652968">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
         </state>
       </provider>
