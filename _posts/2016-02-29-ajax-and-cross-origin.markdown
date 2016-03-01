@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "「学习 · 笔记」Ajax 及跨域请求"
+title:      "Aax - 跨域请求"
 date:       2016-02-29 12:00:00
 author:     "Lindz"
 header-img: "img/home-bg.jpg"
@@ -8,9 +8,9 @@ tags:
 	- Ajax
 	- Javascript
 	- PHP
-	- 学习笔记
 ---
 
+> 欢迎转载，转载请注明出处：[www.happylindz.com](http://www.happylindz.com)。
 
 ## Ajax概念
 
@@ -42,7 +42,7 @@ Ajax全称为：'Asynchronous Javascript And XML'，即异步 Javascript 和 XML
 ```
 表单中有个输入框和提交按钮，还有一个用来存储结果的 div。  
 效果：  
-![](/Users/Mac/Desktop/Screen Shot 2016-03-01 at 9.54.16 AM.png)
+![](/assets/2016-02-29-ajax-and-cross-origin/1.png)
 
 ### Ajax对象创建
 
