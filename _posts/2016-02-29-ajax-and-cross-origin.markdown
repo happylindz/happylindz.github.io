@@ -5,9 +5,9 @@ date:       2016-02-29 12:00:00
 author:     "Lindz"
 header-img: "img/home-bg.jpg"
 tags:
-	- Ajax
-	- Javascript
-	- PHP
+   - Ajax
+   - Javascript
+   - PHP
 ---
 
 > 欢迎转载，转载请注明出处：[www.happylindz.com](http://www.happylindz.com)。
