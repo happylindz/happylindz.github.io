@@ -6,9 +6,7 @@ author:     "Lindz"
 header-img: "img/post-bg-os-metro.jpg"
 tags:
     - 面试
-    - 前端开发
 ---
-
 > 本文记录一些在网上看到的，我认为有意思的前端面试题，欢迎转载，转载请注明出处：[林东洲的博客 | Lindz Blog](http://www.happylindz.com)。
 
 ## 一、var a=["a","b","c","d"] 每过 1 秒 alert 一下数组中的值。
