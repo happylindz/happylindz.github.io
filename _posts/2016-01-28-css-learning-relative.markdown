@@ -7,6 +7,7 @@ header-img: "img/post-bg-2015.jpg"
 tags:
     - CSS
 ---
+
 > 本文为原创作品。欢迎转载，转载请注明出处：[林东洲的博客 | Lindz Blog](http://www.happylindz.com)。
 
 ## relative与absolute：
