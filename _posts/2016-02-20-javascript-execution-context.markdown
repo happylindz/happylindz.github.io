@@ -12,7 +12,8 @@ tags:
 > 欢迎转载，转载请注明出处：[www.happylindz.com](http://www.happylindz.com)。
 
 
-##  概念  
+##  概念
+
 ### 一、执行上下文: (Execution Context,缩写 EC) 
 
 ```javascript
@@ -102,6 +103,7 @@ function test(a, b){
 }
 test(10);
 ```
+
 ### 1.变量初始化阶段：  
 VO按照如下顺序填充：  (在函数执行中，AO等于VO，以下都以VO简称，不再赘述)  
 

@@ -37,6 +37,7 @@ for(let i = 0,len = arr.length;i < len; i++){
  	},1000 * (i+1))
 }
 ```
+
 ## 二、下面程序的执行结果是：
 
 ```javascript
@@ -120,6 +121,7 @@ var name = 'World!';
 <div id="rectangle"><span id="circle"></span><span id="triangle"></span><span id="triangle2"></span></div>
 </body>
 ```
+
 ## 四、实现下述题目的要求：
 
 ```javascript	
@@ -215,6 +217,7 @@ another fn2
 更详细的实现细节可以查阅: [【转向Javascript系列】从setTimeout说事件循环模型 | Web前端 腾讯AlloyTeam  Blog | 愿景: 成为地球卓越的Web团队！](http://www.alloyteam.com/2015/10/turning-to-javascript-series-from-settimeout-said-the-event-loop-model/)  
 
 明白上述题目可以试试下面这题，原理相似:
+
 ### 对于下列程序运行结果，符合预期的是(单选)：
 
 ```javascript

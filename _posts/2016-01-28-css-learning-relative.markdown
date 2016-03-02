@@ -11,6 +11,7 @@ tags:
 ## relative与absolute：
   
 * 限制left/top/right/bottom定位:
+
 > absolute绝对定位是相对于非static值的父元素  
 
 * 限制z-index层级:
@@ -82,9 +83,12 @@ code:
   
 > relative只能限制z-index，对上述其他属性不起作用。  
 
-## relative与定位:  
+## relative与定位:
+
 ### 特性：
-* 相对自身： 
+
+* 相对自身：
+
 > 与absolute(相对于非static值的父元素定位)不同，relative相对于其原本位置进行定位。   
 
 * 无侵入: 	 
@@ -111,7 +115,8 @@ div2{
 top起作用而bottom不起作用；  
 left起作用而right不起作用。  
 
-## relative与层级关系： 
+## relative与层级关系：
+
 ### 提高层叠上下文：  
 
 > 在层叠底部的元素添加relative属性值可将该元素置顶。
