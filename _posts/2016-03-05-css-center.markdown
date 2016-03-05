@@ -5,8 +5,10 @@ date:       2016-03-05 12:00:00
 author:     "Lindz"
 header-img: "img/post-bg-os-metro.jpg"
 tags:
-    - css
+    - CSS
 ---
+
+> 本文记录一些在网上看到的，我认为有意思的前端面试题，欢迎转载，转载请注明出处：[林东洲的博客 Lindz Blog](http://www.happylindz.com)。
 
 ## 如何水平居中一个元素：
 
