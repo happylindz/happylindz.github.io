@@ -208,9 +208,9 @@ function test(){
 * 宿主对象：
 
 > 一门语言在运行的时候，需要一个环境，叫做宿主环境。  
-> 
+ 
 > 对于JavaScript，宿主环境最常见的是web浏览器，浏览器提供了一个JavaScript运行的环境，这个环境里面，需要提供一些接口，好让JavaScript引擎能够和宿主环境对接。  
-> 
+ 
 > JavaScript引擎才是真正执行JavaScript代码的地方，常见的引擎有V8(目前最快JavaScript引擎、Google生产)、JavaScript core。
 
 在浏览器或者服务端( nodejs )都有自己的 JS 引擎，在浏览器中，全局对象为 window，而在 nodejs 中，全局对象为 global。 
