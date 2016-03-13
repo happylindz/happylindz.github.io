@@ -50,7 +50,7 @@ css 代码：
 
 效果：
 
-![](assets/2016-03-13-css-flexbox/1.png)
+![](/assets/2016-03-13-css-flexbox/1.png)
 
 不仅实现了三列布局，中间内容自适应，并且 .main 的内容优先加载，并且设置布局十分简单。
 
@@ -76,7 +76,7 @@ div{
 
 效果：
 
-![](assets/2016-03-13-css-flexbox/2.png)
+![](/assets/2016-03-13-css-flexbox/2.png)
 
 ## 三、实现等高列布局
 
@@ -113,7 +113,7 @@ css 代码：
 
 效果：
 
-![](assets/2016-03-13-css-flexbox/3.png)
+![](/assets/2016-03-13-css-flexbox/3.png)
 
 ## 四、实现流式布局
 
@@ -158,7 +158,7 @@ css 代码：
 
 效果：
 
-![](assets/2016-03-13-css-flexbox/4.png)
+![](/assets/2016-03-13-css-flexbox/4.png)
 
 ## 五、悬挂式布局
 
@@ -166,7 +166,7 @@ css 代码：
 
 效果：
 
-![](assets/2016-03-13-css-flexbox/5.png)
+![](/assets/2016-03-13-css-flexbox/5.png)
 
 
 ## 六、固定的底栏
@@ -175,7 +175,7 @@ css 代码：
 
 效果：
 
-![](assets/2016-03-13-css-flexbox/6.png)
+![](/assets/2016-03-13-css-flexbox/6.png)
 
 参考链接：
 
