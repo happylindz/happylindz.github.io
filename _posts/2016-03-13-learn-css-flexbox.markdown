@@ -268,6 +268,30 @@ baseline: 项目的第一行文字的基线对齐
 
 flex-grow 和 flex-shrink 可缺省，故可单单设置: flex: 2;
 
+grow 和 shrink 是一对双胞胎，grow 表示伸张因子，shrink 表示是收缩因子。
+
+grow 在 flex 容器下的子元素的宽度和比容器和小的时候起作用。 grow 定义了子元素的宽度增长因子，容器中除去子元素之和剩下的宽度会按照各个子元素的 grow 值进行平分加大各个子元素上。
+
+#### 公式：
+
+计算容器还剩空间
+
+```code
+available_space (容器还剩的空间）= container_size (容器宽度) - flex_item_total (子元素宽度之和)
+```
+
+计算增长单位
+
+```code
+grow_unit (增长单位) = available_space / flex_grow_total(子元素增长因子之和)
+``` 
+
+得到子元素的宽度
+
+```code
+flex-item-width (子元素计算得到的宽度) = flex-basis + grow-unit * flex-grow   
+```
+
 ### align-self: 允许单个项目有与其他项目不一样的对齐方式
 
 单个项目覆盖 align-items 定义的属性  
@@ -284,3 +308,9 @@ flex-grow 和 flex-shrink 可缺省，故可单单设置: flex: 2;
 <hr>
 
 讲到这里，flex 布局的基本语法就记录完毕。
+
+参考链接：
+
+* [Flex 布局教程：语法篇 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool)
+* [flexbox：更加优雅的Web布局](https://segmentfault.com/a/1190000002616717#articleHeader11)
+* [CSS3 Flexbox](http://www.html-js.com/article/2582)
