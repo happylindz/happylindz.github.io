@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "CSS - Flex 布局学习笔记"
-date:       2016-03-13 12:00:00
+date:       2016-03-12 12:00:00
 author:     "Lindz"
 header-img: "img/post-bg-os-metro.jpg"
 tags:
