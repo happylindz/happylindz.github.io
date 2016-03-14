@@ -3,7 +3,7 @@ layout:     post
 title:      "Ajax - 模拟百度搜索"
 date:       2016-03-01 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-js-module.jpg"
+header-img: "img/7.jpg"
 tags:
     - Ajax
     - Javascript

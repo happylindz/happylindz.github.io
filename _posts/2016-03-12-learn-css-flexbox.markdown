@@ -3,7 +3,7 @@ layout:     post
 title:      "CSS - Flex 布局学习笔记"
 date:       2016-03-12 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-os-metro.jpg"
+header-img: "img/12.jpg"
 tags:
     - CSS
 ---
@@ -54,7 +54,7 @@ webkit 内核的浏览器需要加上 -webkit- 前缀
 
 **注意：设为 flex 布局后，子元素的 float、 clear、 vertical-align 属性将会失效**
 
-## Flex 容器属性
+## 四、Flex 容器属性
 
 有六种属性可以设在容器 container 中
 
@@ -185,7 +185,7 @@ baseline: 项目的第一行文字的基线对齐
 }
 ```
 
-## Flex 项目属性
+## 五、Flex 项目属性
 
 有六种属性可运用在项目上
 

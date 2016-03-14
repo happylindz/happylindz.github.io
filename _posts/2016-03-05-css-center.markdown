@@ -3,7 +3,7 @@ layout:     post
 title:      "CSS - 居中元素"
 date:       2016-03-05 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-os-metro.jpg"
+header-img: "img/10.jpg"
 tags:
     - CSS
 ---

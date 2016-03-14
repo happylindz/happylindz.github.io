@@ -3,7 +3,7 @@ layout:     post
 title:      "Javascript - 代码规范"
 date:       2016-03-07 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-js-version.jpg"
+header-img: "img/js-bg.jpg"
 tags:
     - Javascript
 ---

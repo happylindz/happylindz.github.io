@@ -3,7 +3,7 @@ layout:     post
 title:      "Javascript - ES3执行上下文"
 date:       2016-02-20 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-e2e-ux.jpg"
+header-img: "img/js-bg.jpg"
 tags:
     - Javascript
 ---

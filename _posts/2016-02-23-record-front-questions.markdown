@@ -3,7 +3,7 @@ layout:     post
 title:      "「前端 · 面试」记录一些有意思的题目(二)"
 date:       2016-02-23 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-rwd.jpg"
+header-img: "img/5.jpg"
 tags:
     - 面试
 ---

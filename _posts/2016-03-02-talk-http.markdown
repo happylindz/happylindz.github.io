@@ -3,7 +3,7 @@ layout:     post
 title:      "浅谈 HTTP 协议"
 date:       2016-03-02 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-ios9-web.jpg"
+header-img: "img/8.jpg"
 tags:
     - HTTP
     - 计算机网络

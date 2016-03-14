@@ -3,7 +3,7 @@ layout:     post
 title:      "Ajax - 跨域请求"
 date:       2016-02-29 12:00:00
 author:     "Lindz"
-header-img: "img/home-bg.jpg"
+header-img: "img/6.jpg"
 tags:
    - Ajax
    - Javascript

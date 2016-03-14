@@ -3,7 +3,7 @@ layout:     post
 title:      "第三方登录 - OAuth2.0协议"
 date:       2016-02-21 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-os-metro.jpg"
+header-img: "img/4.jpg"
 tags:
     - PHP
     - 后台开发

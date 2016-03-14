@@ -3,7 +3,7 @@ layout:     post
 title:      "「学习 · 笔记」CSS之relative"
 date:       2016-01-28 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/2.jpg"
 tags:
     - CSS
 ---

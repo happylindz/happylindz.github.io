@@ -3,7 +3,7 @@ layout:     post
 title:      "Javascript - this"
 date:       2016-03-04 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/js-bg.jpg"
 tags:
     - Javascript
 ---

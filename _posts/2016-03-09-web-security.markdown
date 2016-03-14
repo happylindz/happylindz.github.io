@@ -3,7 +3,7 @@ layout:     post
 title:      "Web 网络安全基础知识"
 date:       2016-03-09 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-os-metro.jpg"
+header-img: "img/11.jpg"
 tags:
     - 计算机网络
     - 网络安全

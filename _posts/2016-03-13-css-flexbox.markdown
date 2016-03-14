@@ -3,7 +3,7 @@ layout:     post
 title:      "CSS - Flexbox 实例"
 date:       2016-03-13 12:00:00
 author:     "Lindz"
-header-img: "img/post-bg-js-version.jpg"
+header-img: "img/13.jpg"
 tags:
     - CSS
 ---
