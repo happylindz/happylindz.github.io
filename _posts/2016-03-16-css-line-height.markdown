@@ -128,7 +128,7 @@ p > span{
 
 line-height: 1.5 会继承这个值然后在与元素当前的 font-size 进行计算
 
-而 line-height：150% | 1.5em 则是先于父类 font-size 计算大小，然后再继承给子元素
+而 line-height：150% 或者 1.5em 则是先于父类 font-size 计算大小，然后再继承给子元素
 
 ## 行内框盒子模型
 
