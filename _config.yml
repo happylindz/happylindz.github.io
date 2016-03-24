@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 林东洲的博客   Lindz Blog
-subtitle:
+title: 林东洲的博客   
+subtitle: Lindz Blog
 description: 纸上得来终觉浅, 绝知此事要躬行.
 author: Lindz
 language: zh-Hans
@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://www.happylindz.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
