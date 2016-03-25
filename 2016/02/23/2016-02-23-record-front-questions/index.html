@@ -1,0 +1,797 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="本文记录一些在网上看到的，我认为有意思的前端面试题，欢迎转载，转载请注明出处：林东洲的博客 Lindz Blog。
+
+输出下面程序题的结果：1234567891011121314151617function Foo() &amp;#123;    getName = function () &amp;#123; alert (1); &amp;#125;;    return this;&amp;#125;Foo.getNam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「前端 · 面试」记录一些有意思的题目(二)">
+<meta property="og:url" content="http://yoursite.com/2016/02/23/2016-02-23-record-front-questions/index.html">
+<meta property="og:site_name" content="林东洲的博客">
+<meta property="og:description" content="本文记录一些在网上看到的，我认为有意思的前端面试题，欢迎转载，转载请注明出处：林东洲的博客 Lindz Blog。
+
+输出下面程序题的结果：1234567891011121314151617function Foo() &amp;#123;    getName = function () &amp;#123; alert (1); &amp;#125;;    return this;&amp;#125;Foo.getNam">
+<meta property="og:image" content="http://yoursite.com/assets/2016-02-23-record-front-questions/1.png">
+<meta property="og:updated_time" content="2016-03-14T13:44:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="「前端 · 面试」记录一些有意思的题目(二)">
+<meta name="twitter:description" content="本文记录一些在网上看到的，我认为有意思的前端面试题，欢迎转载，转载请注明出处：林东洲的博客 Lindz Blog。
+
+输出下面程序题的结果：1234567891011121314151617function Foo() &amp;#123;    getName = function () &amp;#123; alert (1); &amp;#125;;    return this;&amp;#125;Foo.getNam">
+<meta name="twitter:image" content="http://yoursite.com/assets/2016-02-23-record-front-questions/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 「前端 · 面试」记录一些有意思的题目(二) | 林东洲的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">林东洲的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Lindz Blog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                「前端 · 面试」记录一些有意思的题目(二)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-23T12:00:00+08:00" content="2016-02-23">
+              2016-02-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/23/2016-02-23-record-front-questions/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/23/2016-02-23-record-front-questions/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文记录一些在网上看到的，我认为有意思的前端面试题，欢迎转载，转载请注明出处：<a href="http://www.happylindz.com" target="_blank" rel="external">林东洲的博客 Lindz Blog</a>。</p>
+</blockquote>
+<h2 id="输出下面程序题的结果："><a href="#输出下面程序题的结果：" class="headerlink" title="输出下面程序题的结果："></a>输出下面程序题的结果：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert (<span class="number">1</span>); &#125;;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line">Foo.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert (<span class="number">2</span>);&#125;;</span><br><span class="line">Foo.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert (<span class="number">3</span>);&#125;;</span><br><span class="line"><span class="keyword">var</span> getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert (<span class="number">4</span>);&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params"></span>) </span>&#123; alert (<span class="number">5</span>);&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//请写出以下输出结果：</span></span><br><span class="line">Foo.getName();</span><br><span class="line">getName();</span><br><span class="line">Foo().getName();</span><br><span class="line">getName();</span><br><span class="line"><span class="keyword">new</span> Foo.getName();</span><br><span class="line"><span class="keyword">new</span> Foo().getName();</span><br><span class="line"><span class="keyword">new</span> <span class="keyword">new</span> Foo().getName();</span><br></pre></td></tr></table></figure>
+<p>先来理解下题目，首先创建了一个Foo()函数，然后在给Foo函数增添一个函数属性getName,在Foo原型上增添一个getName函数属性，然后再以函数表达式和函数声明分别创建了一个同名函数getName。  </p>
+<h4 id="第一问：Foo-getName-返回2。"><a href="#第一问：Foo-getName-返回2。" class="headerlink" title="第一问：Foo.getName()返回2。"></a>第一问：Foo.getName()返回2。</h4><h4 id="第二问：首先需要知道函数表达式和函数声明的区别。"><a href="#第二问：首先需要知道函数表达式和函数声明的区别。" class="headerlink" title="第二问：首先需要知道函数表达式和函数声明的区别。"></a>第二问：首先需要知道函数表达式和函数声明的区别。</h4><blockquote>
+<p>函数声明具有变量声明提升(即所有声明变量或声明函数都会被提升到当前函数的顶部)</p>
+</blockquote>
+<p>例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'x'</span> <span class="keyword">in</span> <span class="built_in">window</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> func);</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>js引擎会将其解析为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'x'</span> <span class="keyword">in</span> <span class="built_in">window</span>);    <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> func);      <span class="comment">//function</span></span><br><span class="line">x = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<p>如果能明白的话就能理解下面代码的输出： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(x);     <span class="comment">//function()&#123;&#125;</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;          </span><br><span class="line"><span class="built_in">console</span>.log(x);     <span class="comment">//1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log(x);     <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+<p>所以js引擎在解析代码时候就变成了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//省略部分代码</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert (<span class="number">1</span>); &#125;;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> getName;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params"></span>) </span>&#123; alert (<span class="number">5</span>);&#125;</span><br><span class="line">getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert (<span class="number">4</span>);&#125;;</span><br><span class="line"></span><br><span class="line">getName();       <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+<p>后面函数表达式的赋值将前面的getName值个覆盖了，所以第二问输出4。</p>
+<h4 id="第三问：首先执行Foo-函数，并执行getName的赋值语句。"><a href="#第三问：首先执行Foo-函数，并执行getName的赋值语句。" class="headerlink" title="第三问：首先执行Foo()函数，并执行getName的赋值语句。"></a>第三问：首先执行Foo()函数，并执行getName的赋值语句。</h4><blockquote>
+<p>它会查找当前作用域上是否存在这个变量，如果没有就向它上层作用域继续寻找，直到找到window全局作用域，若还是没有则在全局作用域上创建getName变量，  </p>
+</blockquote>
+<p>因为window域中存在着getName这个变量即(var getName = function () { alert (4);};)，所以将其替换为(getName = function () { alert (1); };)<br>并返回window对象，所以Foo().getName()的结果为1；</p>
+<p>若代码改为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; alert (<span class="number">1</span>); &#125;;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line">Foo().getName();     <span class="comment">//TypeError: Foo().getName is not a function.</span></span><br></pre></td></tr></table></figure>
+<p>创建getName时候多加一个var，即在当前作用域中添加一个局部变量getName，而在执行完毕后该局部变量就会被回收，并且该函数返回window全局对象，故在访问window中的getName会报错，因为没有创建window对象无此变量。</p>
+<h4 id="第四问：正如上一问，因为全局作用于window中getName被替换。"><a href="#第四问：正如上一问，因为全局作用于window中getName被替换。" class="headerlink" title="第四问：正如上一问，因为全局作用于window中getName被替换。"></a>第四问：正如上一问，因为全局作用于window中getName被替换。</h4><p>即(getName = function () { alert (1); };)<br>故此时getName();输出结果为1。</p>
+<h4 id="第五问-new-Foo-getName-此处考察的是js的运算符优先级问题。"><a href="#第五问-new-Foo-getName-此处考察的是js的运算符优先级问题。" class="headerlink" title="第五问 new Foo.getName(); ,此处考察的是js的运算符优先级问题。"></a>第五问 new Foo.getName(); ,此处考察的是js的运算符优先级问题。</h4><p>根据图中优先级的描述：<br><img src="/assets/2016-02-23-record-front-questions/1.png" alt="优先级"><br>可以得知：可以得知点（.）的优先级高于new操作，所以原式相当于是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> (Foo.getName)();</span><br></pre></td></tr></table></figure>
+<p>所以结果为2；</p>
+<h4 id="第六问-new-Foo-getName"><a href="#第六问-new-Foo-getName" class="headerlink" title="第六问 new Foo().getName()"></a>第六问 new Foo().getName()</h4><p>根据表的执行结果为：(new Foo()).getName();</p>
+<h3 id="所以接下来先讨论一下js构造函数返回值的问题："><a href="#所以接下来先讨论一下js构造函数返回值的问题：" class="headerlink" title="所以接下来先讨论一下js构造函数返回值的问题："></a>所以接下来先讨论一下js构造函数返回值的问题：</h3><p>js返回值分为三类：<br>1、没有返回值则创建一个空对象，并把函数中与this绑定的属性添加；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123; <span class="keyword">this</span>.name = <span class="string">'foo'</span>;&#125;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> F();   <span class="comment">// obj: &#123;name:'foo'&#125; 创建一个对象，并绑定函数中this所绑定的属性</span></span><br></pre></td></tr></table></figure>
+<p>2、若有返回值则检查返回值的类型，若返回值为非引用类型，比如基本类型:(string,number,boolean,null,undefined)，则js引擎会忽略该返回值，并且创建一个新对象，并把函数中与this绑定的属性添加；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123; <span class="keyword">this</span>.name = <span class="string">'foo'</span>; <span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> F();   <span class="comment">// obj: &#123;name:'foo'&#125; 创建一个对象，并绑定函数中this所绑定的属性</span></span><br></pre></td></tr></table></figure>
+<p>3、若返回值是引用类型，则实际返回值为这个引用类型。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.name = <span class="string">'foo'</span>; <span class="keyword">return</span> &#123;x:<span class="number">1</span>&#125;;&#125;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> F();    <span class="comment">//obj: &#123;x:1&#125;</span></span><br></pre></td></tr></table></figure>
+<p>如果理解这些，再来看下面一个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F1</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.name = <span class="string">'foo'</span>; <span class="keyword">return</span> <span class="string">'a'</span>;&#125;</span><br><span class="line">obj = <span class="keyword">new</span> F1();    <span class="comment">//obj: F1&#123;name: 'foo'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F2</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.name = <span class="string">'foo'</span>; <span class="keyword">return</span> <span class="built_in">String</span>(<span class="string">'a'</span>);&#125;</span><br><span class="line">obj = <span class="keyword">new</span> F2();    <span class="comment">//obj: F2&#123;name: 'foo'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F3</span>(<span class="params"></span>)</span>&#123;<span class="keyword">this</span>.name = <span class="string">'foo'</span>; <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'a'</span>);&#125;</span><br><span class="line">obj = <span class="keyword">new</span> F3();    <span class="comment">//obj: String &#123;0: "a", length: 1&#125;</span></span><br></pre></td></tr></table></figure>
+<p>从例子中我们可以得出：无论 ‘a’还是String(‘a’)创建的都是基本类型值，而new String(‘a’)则创建一个字符串包装对象。</p>
+<p>原题中，返回的是this，而this在构造函数中本来就代表当前实例化对象。<br>之后调用实例化对象的getName函数，因为在Foo构造函数中没有为实例化对象添加任何属性，遂到当前对象的原型对象（prototype）中寻找getName，故最终输出3。</p>
+<h4 id="第七问：new-new-Foo-getName-同样是运算符优先级问题。"><a href="#第七问：new-new-Foo-getName-同样是运算符优先级问题。" class="headerlink" title="第七问：new new Foo().getName(); 同样是运算符优先级问题。"></a>第七问：new new Foo().getName(); 同样是运算符优先级问题。</h4><p>执行结果为：new ((new Foo()).getName)();<br>先初始化Foo的实例化对象，然后将其原型上的getName函数作为构造函数再次new，故最终结果为3</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag">#面试</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/21/2016-02-21-oauth/" rel="next" title="第三方登录 - OAuth2.0协议">
+                <i class="fa fa-chevron-left"></i> 第三方登录 - OAuth2.0协议
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/29/2016-02-29-ajax-and-cross-origin/" rel="prev" title="Ajax - 跨域请求">
+                Ajax - 跨域请求 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/23/2016-02-23-record-front-questions/"
+           data-title="「前端 · 面试」记录一些有意思的题目(二)" data-url="http://yoursite.com/2016/02/23/2016-02-23-record-front-questions/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar-lindz.jpg"
+               alt="Lindz" />
+          <p class="site-author-name" itemprop="name">Lindz</p>
+          <p class="site-description motion-element" itemprop="description">Web Developer</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/happylindz" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1872823177?is_all=1" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/lin-dong-zhou-65" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Zhihu
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:lindongzhou95@gmail.com" target="_blank">
+                  
+                    <i class="fa fa-email"></i> Email
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输出下面程序题的结果："><span class="nav-number">1.</span> <span class="nav-text">输出下面程序题的结果：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一问：Foo-getName-返回2。"><span class="nav-number">1.0.1.</span> <span class="nav-text">第一问：Foo.getName()返回2。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二问：首先需要知道函数表达式和函数声明的区别。"><span class="nav-number">1.0.2.</span> <span class="nav-text">第二问：首先需要知道函数表达式和函数声明的区别。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三问：首先执行Foo-函数，并执行getName的赋值语句。"><span class="nav-number">1.0.3.</span> <span class="nav-text">第三问：首先执行Foo()函数，并执行getName的赋值语句。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四问：正如上一问，因为全局作用于window中getName被替换。"><span class="nav-number">1.0.4.</span> <span class="nav-text">第四问：正如上一问，因为全局作用于window中getName被替换。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第五问-new-Foo-getName-此处考察的是js的运算符优先级问题。"><span class="nav-number">1.0.5.</span> <span class="nav-text">第五问 new Foo.getName(); ,此处考察的是js的运算符优先级问题。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第六问-new-Foo-getName"><span class="nav-number">1.0.6.</span> <span class="nav-text">第六问 new Foo().getName()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#所以接下来先讨论一下js构造函数返回值的问题："><span class="nav-number">1.1.</span> <span class="nav-text">所以接下来先讨论一下js构造函数返回值的问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第七问：new-new-Foo-getName-同样是运算符优先级问题。"><span class="nav-number">1.1.1.</span> <span class="nav-text">第七问：new new Foo().getName(); 同样是运算符优先级问题。</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lindz</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"happylindz"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

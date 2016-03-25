@@ -1,0 +1,818 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="本文为原创作品。欢迎转载，转载请注明出处：林东洲的博客 Lindz Blog。
+
+概念一、执行上下文: (Execution Context,缩写 EC)123456789101112console.log(&apos;EC0&apos;);function funcEC1()&amp;#123;    console.log(&apos;EC1&apos;);    function funcEC2()&amp;#123;        conso">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript - ES3执行上下文">
+<meta property="og:url" content="http://yoursite.com/2016/02/20/2016-02-20-javascript-execution-context/index.html">
+<meta property="og:site_name" content="林东洲的博客">
+<meta property="og:description" content="本文为原创作品。欢迎转载，转载请注明出处：林东洲的博客 Lindz Blog。
+
+概念一、执行上下文: (Execution Context,缩写 EC)123456789101112console.log(&apos;EC0&apos;);function funcEC1()&amp;#123;    console.log(&apos;EC1&apos;);    function funcEC2()&amp;#123;        conso">
+<meta property="og:image" content="http://yoursite.com/assets/2016-02-20-javascript-execution-context/1.png">
+<meta property="og:updated_time" content="2016-03-14T13:44:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript - ES3执行上下文">
+<meta name="twitter:description" content="本文为原创作品。欢迎转载，转载请注明出处：林东洲的博客 Lindz Blog。
+
+概念一、执行上下文: (Execution Context,缩写 EC)123456789101112console.log(&apos;EC0&apos;);function funcEC1()&amp;#123;    console.log(&apos;EC1&apos;);    function funcEC2()&amp;#123;        conso">
+<meta name="twitter:image" content="http://yoursite.com/assets/2016-02-20-javascript-execution-context/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Javascript - ES3执行上下文 | 林东洲的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">林东洲的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Lindz Blog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Javascript - ES3执行上下文
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-20T12:00:00+08:00" content="2016-02-20">
+              2016-02-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/20/2016-02-20-javascript-execution-context/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/20/2016-02-20-javascript-execution-context/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文为原创作品。欢迎转载，转载请注明出处：<a href="http://www.happylindz.com" target="_blank" rel="external">林东洲的博客 Lindz Blog</a>。</p>
+</blockquote>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="一、执行上下文-Execution-Context-缩写-EC"><a href="#一、执行上下文-Execution-Context-缩写-EC" class="headerlink" title="一、执行上下文: (Execution Context,缩写 EC)"></a>一、执行上下文: (Execution Context,缩写 EC)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'EC0'</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcEC1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'EC1'</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">funcEC2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'EC2'</span>);</span><br><span class="line">        <span class="keyword">var</span> funcEC3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'EC3'</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    funcEC2();</span><br><span class="line">&#125;</span><br><span class="line">funcEC1();</span><br></pre></td></tr></table></figure>
+<p>在Javascript引擎解析上述代码时在执行函数会依次将其添加到栈（Stack）中，即(ECO(Global),EC1,EC2)，如下图所示：</p>
+<p><img src="/assets/2016-02-20-javascript-execution-context/1.png" alt="Stack: ExecutionContext"></p>
+<p>执行上下文分为：全局执行上下文和函数执行上下文。</p>
+<h3 id="二、变量对象：-Variable-Object-VO"><a href="#二、变量对象：-Variable-Object-VO" class="headerlink" title="二、变量对象：(Variable Object VO)"></a>二、变量对象：(Variable Object VO)</h3><p>是一个抽象的概念中的‘对象’，它用于存储执行上下文中的： </p>
+<ol>
+<li>变量</li>
+<li>函数声明</li>
+<li>函数参数</li>
+</ol>
+<p>如下述代码：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line">test(<span class="number">30</span>);</span><br></pre></td></tr></table></figure>
+<p>Javascript引擎会将其解析为：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">VO(globalContext) = &#123;</span><br><span class="line">	a: 10,</span><br><span class="line">	test: &lt;ref to function&gt;</span><br><span class="line">&#125;;</span><br><span class="line">VO(test functionContext)&#123;</span><br><span class="line">    x:30,</span><br><span class="line">            b:20</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>在浏览器中全局上下文变量对象为window，而在nodejs中全局上下文变量对象为global。</strong></p>
+<p><strong>当js代码运行前</strong>，在全局执行上下文中(浏览器)中就会默认添加一些变量，<br>如：Math,String,isNaN,window，所以在调用代码时：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>(<span class="number">10</span>);     		<span class="comment">//[[global]].String(10)</span></span><br><span class="line"><span class="built_in">window</span>.a = <span class="number">10</span>;  	    <span class="comment">//[[global]].window.a = 10</span></span><br><span class="line"><span class="keyword">this</span>.b = <span class="number">20</span>; 			<span class="comment">//[[global]].b = 20</span></span><br></pre></td></tr></table></figure>
+<h3 id="三、函数中的激活对象：-Active-Object-AO"><a href="#三、函数中的激活对象：-Active-Object-AO" class="headerlink" title="三、函数中的激活对象：(Active Object AO)"></a>三、函数中的激活对象：(Active Object AO)</h3><p>与变量对象一样，即(VO(functionContext) === AO);<br>只不过AO多了一个变量，为arguments:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">arguments</span> = &#123;</span><br><span class="line">	callee,</span><br><span class="line">	length,</span><br><span class="line">	properties-indexes</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这个可选择性忽略，没什么用。</p>
+<h2 id="函数调用中的执行上下文"><a href="#函数调用中的执行上下文" class="headerlink" title="函数调用中的执行上下文"></a>函数调用中的执行上下文</h2><p>代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> c = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">d</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">var</span> e = <span class="function"><span class="keyword">function</span> <span class="title">_e</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)();</span><br><span class="line">    b = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line">test(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="1-变量初始化阶段："><a href="#1-变量初始化阶段：" class="headerlink" title="1.变量初始化阶段："></a>1.变量初始化阶段：</h3><p>VO按照如下顺序填充：  (在函数执行中，AO等于VO，以下都以VO简称，不再赘述)  </p>
+<ol>
+<li><p>函数参数(若未传入，初始化该参数值为undefined)</p>
+<blockquote>
+<p>这里说一下，未声明的变量和声明为undefined变量是有区别的:用alert未声明的变量会报错：ReferenceError: Can’t find variable，而alert声明为undefined变量会显示undefined。</p>
+<p>然而如果以属性的是形式访问的话，比如window.variable，alert未声明的属性或者声明为undefined的属性都弹出undefined.</p>
+</blockquote>
+</li>
+<li><p>函数声明 (若发生命名冲突，会覆盖之前的函数参数)</p>
+</li>
+<li>变量声明 (初始化变量值为undefined，若发生命名冲突，会忽略)  </li>
+</ol>
+<p>所以在执行到test(10)时，函数执行上下文变量初始化阶段为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">VO(test) = &#123;</span><br><span class="line">	a:<span class="number">10</span>,</span><br><span class="line">	b:<span class="literal">undefined</span>,</span><br><span class="line">	c:<span class="literal">undefined</span>,</span><br><span class="line">	d:<span class="xml"><span class="tag">&lt;<span class="name">ref</span> <span class="attr">to</span> <span class="attr">func</span> '<span class="attr">d</span>'&gt;</span>,</span><br><span class="line">	e:undefined</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>理解：首先添加函数参数，因为传入10，所以a:10而b：20，之后函数声明提升，d被添加VO，并指向func d，之后就是变量声明提升，c、e被依次添加到AO中。</p>
+<blockquote>
+<p>注意变量d和变量e的不同，d是函数声明而e是指向函数表达式，所以在变量初始化阶段时，d已经指向函数地址，而e被赋值必须要等到执行到e = function _e(){}代码的时候</p>
+</blockquote>
+<p>注意：函数表达式并不会影响VO；</p>
+<blockquote>
+<p>注意到函数_e还有下一行代码函数(function(){})(),它们都是函数表达式，所以并不会被添加到VO变量对象里。</p>
+</blockquote>
+<p>讲到这是不是觉得自己已经弄懂了，下面还有阐述一些细节的东西： </p>
+<ul>
+<li>函数声明命名冲突时覆盖函数形参:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,y,z</span>)</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">	<span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+<p>输出结果：function (){}，因为命名冲突时函数声明命名会覆盖函数形参。</p>
+<ul>
+<li>变量声明命名冲突时不会覆盖函数形参或者函数声明：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x, y, z</span>)</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="keyword">var</span> func;</span><br><span class="line">	<span class="built_in">console</span>.log(func);</span><br><span class="line">&#125;</span><br><span class="line">func();</span><br></pre></td></tr></table></figure>
+<p>输出结果：function func(){},理由如上。</p>
+<h3 id="2-代码执行阶段："><a href="#2-代码执行阶段：" class="headerlink" title="2.代码执行阶段："></a>2.代码执行阶段：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">VO(test) = &#123;</span><br><span class="line">	a: <span class="number">10</span>,</span><br><span class="line">	b: <span class="number">20</span>,</span><br><span class="line">	c: <span class="number">10</span>,</span><br><span class="line">	d: <span class="xml"><span class="tag">&lt;<span class="name">ref</span> <span class="attr">to</span> <span class="attr">func</span> '<span class="attr">d</span>'&gt;</span>,</span><br><span class="line">	e: function _e()&#123;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line">``` </span><br><span class="line"> </span><br><span class="line">附赠一题练习题：</span><br><span class="line"></span><br><span class="line">```javascript	</span><br><span class="line">console.log(x);</span><br><span class="line">var x = 10;</span><br><span class="line"></span><br><span class="line">console.log(x);</span><br><span class="line">x = 20;</span><br><span class="line"></span><br><span class="line">function x()&#123;&#125;</span><br><span class="line">console.log(x);</span><br><span class="line"></span><br><span class="line">if(true)&#123;</span><br><span class="line">    var a = 1;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    var b = true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(a);</span><br><span class="line">console.log(b);</span></span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function()&#123;&#125;</span><br><span class="line">10</span><br><span class="line">20</span><br><span class="line">1</span><br><span class="line">undefined</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" rel="tag">#Javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/19/2016-02-19-record-front-questions/" rel="next" title="「前端 · 面试」记录一些有意思的题目(一)">
+                <i class="fa fa-chevron-left"></i> 「前端 · 面试」记录一些有意思的题目(一)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/21/2016-02-21-oauth/" rel="prev" title="第三方登录 - OAuth2.0协议">
+                第三方登录 - OAuth2.0协议 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/20/2016-02-20-javascript-execution-context/"
+           data-title="Javascript - ES3执行上下文" data-url="http://yoursite.com/2016/02/20/2016-02-20-javascript-execution-context/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar-lindz.jpg"
+               alt="Lindz" />
+          <p class="site-author-name" itemprop="name">Lindz</p>
+          <p class="site-description motion-element" itemprop="description">Web Developer</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/happylindz" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1872823177?is_all=1" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/lin-dong-zhou-65" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Zhihu
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:lindongzhou95@gmail.com" target="_blank">
+                  
+                    <i class="fa fa-email"></i> Email
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、执行上下文-Execution-Context-缩写-EC"><span class="nav-number">1.1.</span> <span class="nav-text">一、执行上下文: (Execution Context,缩写 EC)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、变量对象：-Variable-Object-VO"><span class="nav-number">1.2.</span> <span class="nav-text">二、变量对象：(Variable Object VO)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、函数中的激活对象：-Active-Object-AO"><span class="nav-number">1.3.</span> <span class="nav-text">三、函数中的激活对象：(Active Object AO)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数调用中的执行上下文"><span class="nav-number">2.</span> <span class="nav-text">函数调用中的执行上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-变量初始化阶段："><span class="nav-number">2.1.</span> <span class="nav-text">1.变量初始化阶段：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-代码执行阶段："><span class="nav-number">2.2.</span> <span class="nav-text">2.代码执行阶段：</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lindz</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"happylindz"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
