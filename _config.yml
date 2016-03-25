@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 林东洲的博客   
+title: 林东洲的博客
 subtitle: Lindz Blog
 description: 纸上得来终觉浅, 绝知此事要躬行.
 author: Lindz
@@ -68,7 +68,7 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: github
 
 
 index_generator:
