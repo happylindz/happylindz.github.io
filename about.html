@@ -1,0 +1,105 @@
+---
+layout: page
+title: "About"
+description: "Hey, this is Lindz"
+header-img: "img/about-bg.jpg"
+---
+
+<!-- Language Selector -->
+<select onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英语 English </option>
+</select>
+
+<!-- Chinese Version -->
+<div class="zh">
+    <blockquote>
+        <p>多读书，多看报。<br>
+            少吃零食，多敲代码。</p>
+    </blockquote>
+
+    <p>你好， 我是林东洲， 程序员 &amp; 学生，一个充满热情的Web开发者，现就读与 <a href="http://www.neu.edu.cn/">东北大学</a> · 软件工程国际班(英语) 2014级。  </p>
+
+    <p>这是我的个人博客，用来记录分享学习Web开发的点滴，本人热爱Web前后端的开发，
+        在学习之余，积累Web前后端技术，平时关注Github及其他其他前端社区，希望未来成为一名合格的前后端开发者。</p>
+
+    <p>现在我正在寻找2016暑期/秋季的Web前端开发的实习岗位，如果你觉得我能胜任，欢迎与我联系。</p>
+
+
+</div>
+
+<!-- English Version -->
+<div class="en">
+
+    <blockquote>
+        <p>Talk is cheap,<br>
+            Show me your code。</p>
+    </blockquote>
+
+    <p>Hey，My name is Lindz，Programmer &amp; Student, a really passionate web developer，Now I&#39;m pursuing my bachelor degree in <a href="http://www.neu.edu.cn/">NEU</a> · Software Engineer International Class(English) 2014。  </p>
+
+    <p>This is my personal blog, designed to record and share my learning in web developing. I&#39;m totally absorbed in the developing of Web Front-End, In the study, I like accumulation of web technology,usually focus on Github and other front communities. I hope to become a qualified front-end developer one day.</p>
+
+    <p>Now I&#39;m seeking for 2016 Summer / Full internship opportunity of web front software engineer position. If you think I&#39;m qualified, please contact with me!</p>
+
+</div>
+
+
+<div>
+
+    <h3 style="color: #666;">Contact:</h3>
+    <ul>
+        <li>Email: lindongzhou95@gmail.com</li>
+        <li>Github: https://github.com/happylindz</li>
+        <li>知乎: https://www.zhihu.com/people/lin-dong-zhou-65</li>
+    </ul>
+</div>
+
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    function onLanChange(index){
+        if(index == 0){
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }else{
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        }
+    }
+    onLanChange(0);
+</script>
+
+
+
+{% if site.duoshuo_username %}
+ <!--多说评论框 start -->
+<div class="comment">
+    <div class="ds-thread" data-thread-key="{{site.duoshuo_username}}/about" data-title="{{page.title}}" data-url="{{site.url}}/about/"></div>
+</div>
+<!-- 多说评论框 end -->
+
+<!-- Duoshuo hacking -->
+<input id="dsUser" type="hidden" value="{{site.duoshuo_username}}"  />
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Hux
+    var _user = document.getElementById('dsUser').value;
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
+
+
