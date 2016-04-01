@@ -1,7 +1,7 @@
 {
     "name": "lindz-blog",
     "title": "Lindz Blog",
-    "version": "1.0.0",
+    "version": "1.6.0",
     "homepage": "http://happylindz.github.io",
     "author": "Lindz",
     "devDependencies": {
@@ -17,6 +17,9 @@
     },
     "scripts": {
         "preview": "cd _site; python -m SimpleHTTPServer 8020",
-        "watch": "grunt watch & npm run preview & jekyll serve -w;"
+        "watch"  : "grunt watch & npm run preview & jekyll serve -w",
+        "boil"   : "git push boilerplate boilerplate:master",
+        "push"   : "git push origin master --tag",
+        "cafe"   : "git co gitcafe-pages; git merge master; git push gitcafe gitcafe-pages:gitcafe-pages --tag; git co master;"
     }
 }
