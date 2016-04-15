@@ -8,8 +8,6 @@ tags:
     - Javascript
 ---
 
-> 本文为原创作品。欢迎转载，转载请注明出处：[林东洲的博客 Lindz Blog](http://www.happylindz.com)。
-
 谈及 Javascript 中的 this，竟然让人觉得头疼，它不像 Java，C++ 中的 this 指向调用 this 的该对象。
 
 在函数中 this 到底取何值，是在函数真正被调用执行的时候确定下来的，函数定义的时候确定不了。  

@@ -9,7 +9,6 @@ tags:
    - Javascript
    - PHP
 ---
-> 本文为原创作品。欢迎转载，转载请注明出处：[林东洲的博客 Lindz Blog](http://www.happylindz.com)。
 
 ## Ajax概念
 
@@ -261,3 +260,4 @@ CORS与JSONP相比，更为先进、方便和可靠。
 3. JSONP主要被老的浏览器支持，它们往往不支持CORS，而绝大多数现代浏览器都已经支持了CORS。  
 
 
+ 

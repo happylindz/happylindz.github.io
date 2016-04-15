@@ -10,9 +10,6 @@ tags:
     - PHP
 ---
 
-
-> 本文为原创作品。欢迎转载，转载请注明出处：[林东洲的博客 Lindz Blog](http://www.happylindz.com)。
-
 在阅读此文前，建议先阅读  [Ajax - 跨域请求](http://www.happylindz.com/2016/03/01/2016-02-29-ajax-and-cross-origin/) 熟悉一下 AJax 请求，本文会跳过一些细节代码的实现说明。
 
 

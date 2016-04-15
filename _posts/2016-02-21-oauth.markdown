@@ -9,8 +9,6 @@ tags:
     - 后台开发
 ---
 
-> 本文为原创作品。欢迎转载，转载请注明出处：[林东洲的博客 Lindz Blog](http://www.happylindz.com)。
-
 ## OAuth协议简介：
 
 OAuth协议：即为Open Authorization，我们经常在一些网站提供一些例如QQ，微博等应用的登录方式。  
