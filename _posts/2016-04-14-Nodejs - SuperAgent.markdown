@@ -29,8 +29,7 @@ npm install superagent
 ```javascript
 //superagent
 var superagent = require('supeagent');
-superagent.get('http://www.baidu.com')
-			.end(function(req, res){
+superagent.get('http://www.baidu.com').end(function(req, res){
 				console.log(res.text);
 			});
 
@@ -76,13 +75,10 @@ superagent('GET', 'http://www.baidu.com').end(function(req, res){
 
 ```javascript
 方法 1:单独设置
-superagent.get('http://www.baidu.com')
-			.set('Referer', 'http://www.example.com')
-			.set('Accept', 'text/json');
+superagent.get('http://www.baidu.com').set('Referer', 'http://www.example.com').set('Accept', 'text/json');
 			
 方法 2:一起设置
-superagent.get('http://www.baidu.com')
-			.set({
+superagent.get('http://www.baidu.com').set({
 				'Referer': 'http://www.example.com',
 				'Accept': 'text/json'
 			});			
@@ -98,22 +94,16 @@ superagent.get('http://www.baidu.com')
 
 ```javascript
 方法 1:
-superagent.get('/')
-			.query({name:'lindz'})
-			.query({age:21})
+superagent.get('/').query({name:'lindz'}).query({age:21})
 
 方法 2:
-superagent.get('/')
-			.query('name=lindz')
-			.query('age=21');
+superagent.get('/').query('name=lindz').query('age=21');
 	
 方法 3:
-superagent.get('/')
-			.query({name:'lindz', age: 21});
+superagent.get('/').query({name:'lindz', age: 21});
 			
 方法 4:
-superagent.get('/')
-			.query('name=lindz&age=21');
+superagent.get('/').query('name=lindz&age=21');
 ```
 
 #### POST 请求主体：
@@ -122,13 +112,10 @@ superagent.get('/')
 
 ```javascript
 //比如传递 json 数据
-superagent.post('/')
-      		.send('{"name":"lindz","age":21');
+superagent.post('/').send('{"name":"lindz","age":21');
       		
 //或者
-superagent.post('/')
-			.send({name:"lindz"})
-      		.send({age:21})
+superagent.post('/').send({name:"lindz"}).send({age:21})
 ```
 
 ### HTTP 响应属性：
