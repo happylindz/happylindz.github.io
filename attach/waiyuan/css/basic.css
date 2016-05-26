@@ -1,68 +1,92 @@
-html body{
+html body {
     height: 100%;
-    background: url("../image/background.jpg");
 }
-body{
+
+body {
+    background: #999;
     -webkit-font-smoothing: antialiased;
     font-family: Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
 }
 
-.container{
-    margin: 100px auto;
-    width: 1300px;
-    background: #CCC;
+.container {
+    background: url("../image/background.jpg");
+    margin: auto;
+    padding-top: 50px;
+    width: 1024px;
+    max-width: 1024px;
     z-index: 3;
     border: 10px solid #420000;
+    padding-bottom: 30px;
 }
 
-.container .nav .ul-nav{
-    width: 80%;
-    margin: 0 auto;
+.container .content {
+    background: #ccc;
+    margin: 0 50px;
+    padding: 10px;
+}
 
+.container .nav .ul-nav {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 924px;
 }
 
 .container .nav .ul-nav li {
-
-    display: inline-block;
-    text-align: center;
-    margin: 30px;
-
-}
-.container .header{
-
-    text-align: center;
-    margin: 25px auto 0;
-
-}
-.container .main .left-main{
     float: left;
-    width: 600px;
+    width: 280px;
+    margin: 50px 10px;
+}
+
+.container .nav .ul-nav li > a {
+    display: block;
+    width: 100%;
+}
+
+.container .nav .ul-nav li a > img {
+    width: 280px;
+    border: solid 1px #999;
+}
+
+.container .header {
+
+    text-align: center;
+    margin: 20px auto 0;
+
+}
+
+.container .main {
+    clear: both;
+}
+
+.container .main .left-main {
+    float: left;
+    width: 500px;
     background: #fff;
-    margin: 0 30px;
+    margin: 0 20px;
 }
 
-.container .main .left-main p, .container .main .right-main p{
+.container .main .left-main p, .container .main .right-main p {
 
-    line-height: 30px;
-    font-size: 20px;
+    line-height: 20px;
+    font-size: 15px;
+    overflow: hidden;
 
 }
 
-.container .main .left-main p > a, .container .main .right-main p > a{
+.container .main .left-main p > a, .container .main .right-main p > a {
     display: block;
     line-height: 40px;
-    font-size: 20px;
+    font-size: 15px;
     color: black;
 }
 
-
-
-.container .main .right-main{
+.container .main .right-main {
     overflow: hidden;
     background: #fff;
-    margin-right: 30px;
+    margin-right: 20px;
 }
-.container .school-state h3, .container .learn-material h3, article#main h3{
+
+.container .school-state h3, .container .learn-material h3, article#main h3 {
     display: block;
     background-image: url(../image/title1.jpg);
     background-size: 303px 60px;
@@ -73,89 +97,115 @@ body{
     line-height: 60px;
     color: #B13633;
     font-weight: 900;
-    border-bottom: 2px dotted #949494;
-    font-size: 25px;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
 
 }
 
-.container .school-state > p, .container .learn-material p{
+.container .school-state > p, .container .learn-material p {
     border-bottom: 1px dotted #949494;
-    margin: 0 30px;
+    margin: 0 20px;
     height: 40px;
     line-height: 40px;
     text-indent: 10px;
 }
-.container .main a{
+
+.container .school-state > p:last-child, .container .learn-material p:last-child {
+    border: none;
+}
+
+.container .main a {
     text-decoration: none;
     color: #074d6f;
 }
 
-footer{
+footer {
     clear: both;
 }
 
 footer p {
     text-align: center;
-    font-size: 13px;
-    margin: 20px auto;
+    font-size: 10px;
+    color: black;
+    margin: 20px auto 0;
+    padding: 10px;
 }
-
 
 /*details css*/
 
-section.return-nav{
+section.return-nav {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 10px;
     font-size: 23px;
-    text-indent: 100px;
-    color: #880000;
+    margin-left: 15px;
+    color: #000;
+    text-align: center;
+    border: 2px solid red;
 }
 
-section.return-nav a{
+section.return-nav a {
     text-decoration: none;
-    color: #880000;
+    color: #000;
 }
 
-.container article#main{
+.container article#main {
     border: 2px solid black;
-    width: 70%;
+    width: 90%;
     margin: 20px auto;
     background: white;
 }
-.container article#main h1{
+.container article#main img{
+    max-width: 100%;
+}
+
+.container article#main h1 {
     text-align: center;
     color: #000;
     font-weight: 500;
-    font-size: 30px;
-    margin: 20px;
-    line-height: 40px;
-}
-.container article#main p.para{
     font-size: 22px;
+    margin: 20px;
+    line-height: 30px;
+}
+
+.container article#main p.para {
+    font-size: 16px;
     margin: 20px;
     text-indent: 40px;
     line-height: 30px;
 }
+.container article#main p.second-para{
+    text-indent: 80px;
+}
 
-.container article#main p.author{
+
+.container article#main p.author {
 
     text-align: right;
-    font-size: 18px;
+    font-size: 16px;
     margin: 20px;
     margin-right: 50px;
 }
-.container article#main .img-container{
-    width: 800px;
+
+.container article#main .img-container {
+    width: 700px;
     margin: auto;
 
 }
-.container article#main .img-container img{
+
+.container article#main .img-container img {
     max-width: 100%;
 }
-.container article#main p.last-para{
+
+.container article#main p.last-para {
     margin-bottom: 50px;
 }
-.strong{
+
+.strong {
     font-weight: 900;
 }
-.center{
+
+.center {
     text-align: center;
 }
