@@ -78,7 +78,7 @@ gulp.task('default', function () {
 
 gulp 的默认事件是 default，当你没有执行某个事件时候，gulp 会自动执行 default 这项任务，之后我们可以执行这个gulpfile.js
 
-![](/assets/2016-06-21-gulp-learninigt/1.gif)
+![](/assets/2016-06-21-gulp-learning/1.gif)
 
 如果你想执行指定名字的任务
 
@@ -92,7 +92,7 @@ gulp.task('task1', function () {
 
 执行结果：
 
-![](/assets/2016-06-21-gulp-learninigt/2.gif)
+![](/assets/2016-06-21-gulp-learning/2.gif)
 
 在一个任务中包含另一个任务
 
@@ -114,7 +114,7 @@ gulp.task('default', ['task1', 'task2'], function(){
 
 执行结果：
 
-![](/assets/2016-06-21-gulp-learninigt/3.gif)
+![](/assets/2016-06-21-gulp-learning/3.gif)
 
 ### 压缩 javascript 代码
 
@@ -187,7 +187,7 @@ gulp.task('sass', function () {
 
 **当你在敲代码的时候容易漏掉一些符号或者一些小错误，这时候如果gulp 有监视任务的时候，它就会抛出异常并停止监视。如果每次因为一点小错误就导致需要重新开启监视模式，那未免显得麻烦，比如：**
 
-![](/assets/2016-06-21-gulp-learninigt/4.gif)
+![](/assets/2016-06-21-gulp-learning/4.gif)
 
 
 首先需要安装模块 gulp-plumber
@@ -213,7 +213,7 @@ gulp.task('scripts', function () {
 
 实现效果如下: 
 
-![](/assets/2016-06-21-gulp-learninigt/5.gif)
+![](/assets/2016-06-21-gulp-learning/5.gif)
 
 还有另一种实现方式不需要额外加载模块，代码如下:
 
